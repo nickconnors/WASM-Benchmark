@@ -19,8 +19,6 @@ function calcPrimesJS() {
   }
 }
 
-
-
 onmessage = function(e) {
   if (e.data == "JS") {
     calcPrimesJS();

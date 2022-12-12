@@ -1,10 +1,15 @@
 const worker = new Worker('worker.js');
 
+var pJS = document.getElementById("timerJS");
+var pWASM = document.getElementById("timerWASM");
+
 var timerID;
+
 var tens = 0;
 var seconds = 0;
 var appendTens;
 var appendSeconds;
+
 function startTimer () {
   tens++; 
   
@@ -38,9 +43,8 @@ function resetTimer () {
 }
 
 document.getElementById("calcPrimesJS").addEventListener("click", function() {
-  var p = document.getElementById("timerJS");
-  appendSeconds = p.querySelector('.seconds');
-  appendTens = p.querySelector('.tens');
+  appendSeconds = pJS.querySelector('.seconds');
+  appendTens = pJS.querySelector('.tens');
 
   resetTimer();
   timerID = setInterval(startTimer, 10);
@@ -53,9 +57,8 @@ document.getElementById("calcPrimesJS").addEventListener("click", function() {
 });
 
 document.getElementById("calcPrimesWASM").addEventListener("click", function() {
-  var p = document.getElementById("timerWASM");
-  appendSeconds = p.querySelector('.seconds');
-  appendTens = p.querySelector('.tens');
+  appendSeconds = pWASM.querySelector('.seconds');
+  appendTens = pWASM.querySelector('.tens');
 
   resetTimer();
   timerID = setInterval(startTimer, 10);

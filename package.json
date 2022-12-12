@@ -1,9 +1,9 @@
 {
-  "name": "getting-started-with-webassembly",
+  "name": "WebAssembly-performance-test",
   "version": "1.0.0",
-  "description": "Getting Started with WebAssembly Course Code",
+  "description": "WebAssembly vs. Javascript prime number calculator",
   "main": "server.js",
-  "author": "Ray Viljoen <ray@stackacademy.tv>",
+  "author": "Nick Connors",
   "license": "MIT",
   "scripts": {
     "start": "node server.js"
