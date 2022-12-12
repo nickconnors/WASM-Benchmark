@@ -1,7 +1,5 @@
 importScripts('primes.js');
 
-calcPrimesWASM = cwrap('calcPrimes', 'number', null);
-
 function isPrime(n) {
   for (let i = 2; i <= n/2; i++) {
     if (!(n % i)) {
@@ -26,7 +24,7 @@ onmessage = function(e) {
   }
 
   if (e.data == "WASM") {
-    calcPrimesWASM();
+    _calcPrimesWASM();
     postMessage(null);
   }
 }

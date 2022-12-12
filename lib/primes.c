@@ -11,7 +11,7 @@ int isPrime(int n) {
 }
 
 EMSCRIPTEN_KEEPALIVE
-int calcPrimes() {
+int calcPrimesWASM() {
 	int numPrimes = 0;
 
 	for (int i = 2; i < 1000001; i++) {
