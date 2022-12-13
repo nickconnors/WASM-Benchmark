@@ -1,32 +1,14 @@
-#include <emscripten.h>
-#include <stdbool.h>
-#include <string.h>
+//#include <emscripten.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
-// int isPrime(int n) {
-// 	for (int i = 2; i <= n / 2; i++) {
-// 		if (!(n % i)) {
-// 			return 0;
-// 		}
-// 	}
-// 	return 1;
-// }
 
-// EMSCRIPTEN_KEEPALIVE
-// int calcPrimesWASM() {
-// 	int numPrimes = 0;
+int main(/*int n*/) {
+	int n = 100000000;
 
-// 	for (int i = 2; i < 1000001; i++) {
-// 		numPrimes += isPrime(i);
-// 	}
-
-// 	return numPrimes;
-// }
-
-EMSCRIPTEN_KEEPALIVE
-int calcPrimesWASM(int n) {
+  time_t t = clock();
   /* Create an array of values, where '1' indicates that a number is prime.
    * Start by assuming all numbers are prime by setting them to 1.
    */
@@ -58,7 +40,9 @@ int calcPrimesWASM(int n) {
     }
   }
 
+  t = clock() - t;
   free(primes);
+  printf("%f\n", (double) t / CLOCKS_PER_SEC);
   printf("%d\n", count);
 
   return count;
