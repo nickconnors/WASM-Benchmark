@@ -5,26 +5,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-// int isPrime(int n) {
-// 	for (int i = 2; i <= n / 2; i++) {
-// 		if (!(n % i)) {
-// 			return 0;
-// 		}
-// 	}
-// 	return 1;
-// }
-
-// EMSCRIPTEN_KEEPALIVE
-// int calcPrimesWASM() {
-// 	int numPrimes = 0;
-
-// 	for (int i = 2; i < 1000001; i++) {
-// 		numPrimes += isPrime(i);
-// 	}
-
-// 	return numPrimes;
-// }
-
 EMSCRIPTEN_KEEPALIVE
 int calcPrimesWASM(int n) {
   /* Create an array of values, where '1' indicates that a number is prime.
@@ -53,7 +33,6 @@ int calcPrimesWASM(int n) {
   int count = 0;
   for (int i = 2; i <= n; i++) {
     if (primes[i - 1]) {
-      //printf("%d\n", i);
       count++;
     }
   }
