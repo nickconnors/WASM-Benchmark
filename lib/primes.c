@@ -38,7 +38,6 @@ int calcPrimesWASM(int n) {
   }
 
   free(primes);
-  printf("%d\n", count);
 
   return count;
 }
