@@ -25,12 +25,12 @@ function calcPrimesJS(n) {
 
 onmessage = function(e) {
   if (e.data == "JS") {
-    calcPrimesJS(900000000);
+    calcPrimesJS(400000000);
     postMessage(null);
   }
 
   if (e.data == "WASM") {
-    _calcPrimesWASM(900000000);
+    _calcPrimesWASM(400000000);
     postMessage(null);
   }
 }
